@@ -1,0 +1,12 @@
+roam-notes.test {
+    root * /public_html
+    file_server
+    tls internal {
+        on_demand
+    }
+
+}
+localhost {
+    root * /public_html
+    file_server
+}
