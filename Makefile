@@ -1,5 +1,5 @@
 SERVER_HOST=server01.baty.net
-SERVER_DIR=/home/jbaty/apps/notes.baty.net/public_html/
+SERVER_DIR=/home/jbaty/apps/notes.baty.net/
 PUBLIC_DIR=/Users/jbaty/sites/roam/public_html
 TARGET=server01.baty.net
 
