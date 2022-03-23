@@ -1,0 +1,13 @@
+.figure p:last-child {
+  font-size: 0.8em;
+  margin-top: 0px;
+}
+
+.figure p:first-child {
+    margin-bottom: 0px;
+}
+
+.top-nav {
+  font-size: 0.8em;
+  padding: 3px;
+}

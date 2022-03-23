@@ -10,3 +10,11 @@ localhost {
     root * /public_html
     file_server
 }
+
+159.65.178.73 {
+    root * /public_html
+    file_server
+    tls internal {
+        on_demand
+    }
+}
