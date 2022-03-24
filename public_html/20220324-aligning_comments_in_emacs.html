@@ -6,7 +6,7 @@
 <!-- 2022-03-24 Thu 10:23 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Topic Index</title>
+<title>Aligning comments in Emacs</title>
 <meta name="author" content="Jack Baty" />
 <meta name="generator" content="Org Mode" />
 <style>
@@ -212,59 +212,66 @@ font-family: sans-serif;
 </head>
 <body>
 <div class="top-nav"><a href="/index.html">Home</a></div><div id="content" class="content">
-<h1 class="title">Topic Index</h1>
+<h1 class="title">Aligning comments in Emacs</h1>
 <p>
-This is unfinished and should be ignored
+Here's the snippet:
 </p>
 
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">Align comments in marked region</span>
+<span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">Via https://stackoverflow.com/a/20278032</span>
+<span style="color: #4078f2;">(</span><span style="color: #e45649;">defun</span> <span style="color: #a626a4;">jab/align-comments</span> <span style="color: #a626a4;">(</span>beginning end<span style="color: #a626a4;">)</span>
+  <span style="color: #84888b; font-style: italic;">"Align comments within marked region."</span>
+  <span style="color: #a626a4;">(</span><span style="color: #e45649;">interactive</span> <span style="color: #50a14f;">"*r"</span><span style="color: #a626a4;">)</span>
+  <span style="color: #a626a4;">(</span><span style="color: #e45649;">let</span> <span style="color: #50a14f;">(</span><span style="color: #6a1868;">indent-tabs-mode</span> <span style="color: #6a1868;">align-to-tab-stop</span><span style="color: #50a14f;">)</span>
+    <span style="color: #50a14f;">(</span><span style="color: #a626a4;">align-regexp</span> beginning end <span style="color: #b751b6;">(</span><span style="color: #b751b6;">concat</span> <span style="color: #50a14f;">"</span><span style="color: #4078f2; font-weight: bold;">\\</span><span style="color: #4078f2; font-weight: bold;">(</span><span style="color: #50a14f;">\\s-*</span><span style="color: #4078f2; font-weight: bold;">\\</span><span style="color: #4078f2; font-weight: bold;">)</span><span style="color: #50a14f;">"</span>
+                                        <span style="color: #4078f2;">(</span><span style="color: #b751b6;">regexp-quote</span> <span style="color: #6a1868;">comment-start</span><span style="color: #4078f2;">)</span><span style="color: #b751b6;">)</span><span style="color: #50a14f;">)</span><span style="color: #a626a4;">)</span><span style="color: #4078f2;">)</span>
+</pre>
+</div>
 
-<div id="outline-container-orgdf19dbc" class="outline-2">
-<h2 id="orgdf19dbc">B</h2>
-<div class="outline-text-2" id="text-orgdf19dbc">
-<ul class="org-ul">
-<li>Blogging
-<ul class="org-ul">
-<li><a href="20220318070123-org2blog.html">Org2Blog</a></li>
-</ul></li>
-</ul>
+<p>
+Here's an example before:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #4078f2;">(</span><span style="color: #e45649;">setq</span> <span style="color: #6a1868;">org-roam-capture-templates</span>
+  <span style="color: #4078f2;">'</span><span style="color: #a626a4;">(</span><span style="color: #50a14f;">(</span><span style="color: #50a14f;">"d"</span> <span style="color: #50a14f;">"default"</span> plain <span style="color: #50a14f;">"%?"</span>
+    <span style="color: #a626a4;">:target</span> <span style="color: #b751b6;">(</span>file+head <span style="color: #50a14f;">"%&lt;%Y%m%d&gt;-${slug}.org"</span>
+                       <span style="color: #50a14f;">"#+title: ${title}\n#+index: \n#+setupfile: ~/org/_SETUP/EXPORT\n#+setupfile: ~/org/_SETUP/org-roam-publish-fancy.setup"</span><span style="color: #b751b6;">)</span>
+    <span style="color: #a626a4;">:unnarrowed</span> t<span style="color: #50a14f;">)</span>
+    <span style="color: #50a14f;">(</span><span style="color: #50a14f;">"p"</span> <span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">Key</span>
+     <span style="color: #50a14f;">"project"</span> <span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">Description</span>
+     plain <span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">Type</span>
+     <span style="color: #b751b6;">(</span>file <span style="color: #50a14f;">"~/org/roam/templates/ProjectTemplate.org"</span><span style="color: #b751b6;">)</span>       <span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">Template</span>
+    <span style="color: #a626a4;">:target</span> <span style="color: #b751b6;">(</span>file <span style="color: #50a14f;">"%&lt;%Y%m%d&gt;-${slug}.org"</span><span style="color: #b751b6;">)</span>
+    <span style="color: #a626a4;">:unnarrowed</span> t<span style="color: #50a14f;">)</span><span style="color: #a626a4;">)</span><span style="color: #4078f2;">)</span>
+
+</pre>
 </div>
-</div>
-<div id="outline-container-org6282f21" class="outline-2">
-<h2 id="org6282f21">E</h2>
-<div class="outline-text-2" id="text-org6282f21">
-<ul class="org-ul">
-<li>Emacs
-<ul class="org-ul">
-<li><a href="20220318162029-elfeed.html">Elfeed</a></li>
-<li><a href="20220323-org-download.html">Org-download</a></li>
-<li><a href="20220318070123-org2blog.html">Org2Blog</a></li>
-</ul></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org612c7b6" class="outline-2">
-<h2 id="org612c7b6">O</h2>
-<div class="outline-text-2" id="text-org612c7b6">
-<ul class="org-ul">
-<li>Org-mode
-<ul class="org-ul">
-<li><a href="20220323-org-download.html">Org-download</a></li>
-</ul></li>
-</ul>
-</div>
-</div>
-<div id="outline-container-org5fc8509" class="outline-2">
-<h2 id="org5fc8509">P</h2>
-<div class="outline-text-2" id="text-org5fc8509">
-<ul class="org-ul">
-<li><a href="20220321110521-leitz_focomat_iic_lens_receptacle_disassembly.html">Photography</a></li>
-</ul>
-</div>
+
+<p>
+Then after calling <code>jab/align-comments</code>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #4078f2;">(</span><span style="color: #e45649;">setq</span> <span style="color: #6a1868;">org-roam-capture-templates</span>
+  <span style="color: #4078f2;">'</span><span style="color: #a626a4;">(</span><span style="color: #50a14f;">(</span><span style="color: #50a14f;">"d"</span> <span style="color: #50a14f;">"default"</span> plain <span style="color: #50a14f;">"%?"</span>
+    <span style="color: #a626a4;">:target</span> <span style="color: #b751b6;">(</span>file+head <span style="color: #50a14f;">"%&lt;%Y%m%d&gt;-${slug}.org"</span>
+                       <span style="color: #50a14f;">"#+title: ${title}\n#+index: \n#+setupfile: ~/org/_SETUP/EXPORT\n#+setupfile: ~/org/_SETUP/org-roam-publish-fancy.setup"</span><span style="color: #b751b6;">)</span>
+    <span style="color: #a626a4;">:unnarrowed</span> t<span style="color: #50a14f;">)</span>
+    <span style="color: #50a14f;">(</span><span style="color: #50a14f;">"p"</span>                                               <span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">Key</span>
+     <span style="color: #50a14f;">"project"</span>                                         <span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">Description</span>
+     plain                                             <span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">Type</span>
+     <span style="color: #b751b6;">(</span>file <span style="color: #50a14f;">"~/org/roam/templates/ProjectTemplate.org"</span><span style="color: #b751b6;">)</span> <span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">Template</span>
+    <span style="color: #a626a4;">:target</span> <span style="color: #b751b6;">(</span>file <span style="color: #50a14f;">"%&lt;%Y%m%d&gt;-${slug}.org"</span><span style="color: #b751b6;">)</span>             <span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">Target</span>
+    <span style="color: #a626a4;">:unnarrowed</span> t<span style="color: #50a14f;">)</span><span style="color: #a626a4;">)</span><span style="color: #4078f2;">)</span>
+
+</pre>
 </div>
 </div>
 <div id="postamble" class="status">
 <hr>
-<p>Author: <strong><a href="https://baty.net">Jack Baty</a></strong> <a href='mailto:<a href="mailto:jack@baty.net">jack@baty.net</a>' rel='author'>💌</a> | Last updated: 2022-03-23 Wed 06:22</p>
+<p>Author: <strong><a href="https://baty.net">Jack Baty</a></strong> <a href='mailto:<a href="mailto:jack@baty.net">jack@baty.net</a>' rel='author'>💌</a> | Last updated: 2022-03-24 Thu 10:21</p>
 </div>
 </body>
 </html>
