@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-03-24 Thu 10:23 -->
+<!-- 2022-03-26 Sat 13:13 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Aligning comments in Emacs</title>
@@ -193,28 +193,15 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { width: 90%; }
 </style>
-<link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
-<link rel="stylesheet" href="/css/styles.css">
-<style type="text/css">
-h1,h2,h3{
-line-height:1.2
-}
-h2 {
-font-size: 2.0rem;
-}
-footer{
-border-top: 1px solid #444;
-padding: 10px;
-font-size: smaller;
-font-family: sans-serif;
-}
-</style>
 </head>
 <body>
-<div class="top-nav"><a href="/index.html">Home</a></div><div id="content" class="content">
+<div id="content" class="content">
 <h1 class="title">Aligning comments in Emacs</h1>
 <p>
-Here's the snippet:
+:ID:       20220324T100004.139626
+</p>
+<p>
+Here&rsquo;s the snippet:
 </p>
 
 <div class="org-src-container">
@@ -223,14 +210,14 @@ Here's the snippet:
 <span style="color: #4078f2;">(</span><span style="color: #e45649;">defun</span> <span style="color: #a626a4;">jab/align-comments</span> <span style="color: #a626a4;">(</span>beginning end<span style="color: #a626a4;">)</span>
   <span style="color: #84888b; font-style: italic;">"Align comments within marked region."</span>
   <span style="color: #a626a4;">(</span><span style="color: #e45649;">interactive</span> <span style="color: #50a14f;">"*r"</span><span style="color: #a626a4;">)</span>
-  <span style="color: #a626a4;">(</span><span style="color: #e45649;">let</span> <span style="color: #50a14f;">(</span><span style="color: #6a1868;">indent-tabs-mode</span> <span style="color: #6a1868;">align-to-tab-stop</span><span style="color: #50a14f;">)</span>
+  <span style="color: #a626a4;">(</span><span style="color: #e45649;">let</span> <span style="color: #50a14f;">(</span><span style="color: #6a1868;">indent-tabs-mode</span> align-to-tab-stop<span style="color: #50a14f;">)</span>
     <span style="color: #50a14f;">(</span><span style="color: #a626a4;">align-regexp</span> beginning end <span style="color: #b751b6;">(</span><span style="color: #b751b6;">concat</span> <span style="color: #50a14f;">"</span><span style="color: #4078f2; font-weight: bold;">\\</span><span style="color: #4078f2; font-weight: bold;">(</span><span style="color: #50a14f;">\\s-*</span><span style="color: #4078f2; font-weight: bold;">\\</span><span style="color: #4078f2; font-weight: bold;">)</span><span style="color: #50a14f;">"</span>
                                         <span style="color: #4078f2;">(</span><span style="color: #b751b6;">regexp-quote</span> <span style="color: #6a1868;">comment-start</span><span style="color: #4078f2;">)</span><span style="color: #b751b6;">)</span><span style="color: #50a14f;">)</span><span style="color: #a626a4;">)</span><span style="color: #4078f2;">)</span>
 </pre>
 </div>
 
 <p>
-Here's an example before:
+Here&rsquo;s an example before:
 </p>
 
 <div class="org-src-container">
@@ -271,7 +258,7 @@ Then after calling <code>jab/align-comments</code>
 </div>
 <div id="postamble" class="status">
 <hr>
-<p>Author: <strong><a href="https://baty.net">Jack Baty</a></strong> <a href='mailto:<a href="mailto:jack@baty.net">jack@baty.net</a>' rel='author'>💌</a> | Last updated: 2022-03-24 Thu 10:21</p>
+<p>Author: <strong><a href="https://baty.net">Jack Baty</a></strong> <a href='mailto:<a href="mailto:jack@baty.net">jack@baty.net</a>' rel='author'>💌</a> | Last updated: 2022-03-25 Fri 12:51</p>
 </div>
 </body>
 </html>
